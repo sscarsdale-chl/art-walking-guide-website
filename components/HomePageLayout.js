@@ -97,8 +97,8 @@ export default class HomePageLayout extends Component {
             <a>Gallery Page 5</a>
         </Link>
       </div>
-
-      <h2>Visited Pages:</h2>
+      <hr></hr>
+      <h3>Visited Pages:</h3>
       <ul>
         <li>{galleryPage1Status}</li>
         <li>{galleryPage2Status}</li>

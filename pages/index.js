@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { Component} from 'react'
-import Link from 'next/link'
 import HomePageLayout from '../components/HomePageLayout'
 import Router from 'next/router'
 

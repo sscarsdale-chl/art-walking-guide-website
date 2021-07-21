@@ -1,14 +1,9 @@
 {
   "/_app": "pages/_app.js",
-  "/api/hello": "pages/api/hello.js",
-  "/galleryPage1": "pages/galleryPage1.html",
-  "/galleryPage2": "pages/galleryPage2.html",
-  "/galleryPage3": "pages/galleryPage3.html",
-  "/galleryPage4": "pages/galleryPage4.html",
-  "/galleryPage5": "pages/galleryPage5.html",
-  "/": "pages/index.html",
-  "/successPage": "pages/successPage.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.html"
+  "/successPage": "pages/successPage.js",
+  "/galleryPage1": "pages/galleryPage1.js",
+  "/": "pages/index.js",
+  "/galleryPage4": "pages/galleryPage4.js"
 }
