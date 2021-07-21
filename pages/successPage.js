@@ -73,8 +73,8 @@ export default class SuccessPage extends Component {
             </div>
             <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
             <div className="relative py-10 flex flex-col items-center justify-center h-full ">
-              <h2 className="uppercase text-5xl px-4 font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
-                Take a gift<br/>home from us
+              <h2 className="uppercase text-4xl px-4 font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
+                That's a lot<br/>of walking!<br/>You are now an<br/>"Art Enthusiast"
               </h2>
               <img
                 className="h-48 w-auto m-8"
@@ -82,7 +82,7 @@ export default class SuccessPage extends Component {
                 alt="Gift Icon"
               />
               <h4 className="uppercase px-8 text-xl font-bold text-white text-center bg-clip-text">
-                Scan the qr codes for all<br/>of the works of art<br/>to recieve a choctaw gift!
+                Show this screen to the<br/>front desk to recieve<br/>your choctaw gift!
               </h4>
             </div>
           </div>
