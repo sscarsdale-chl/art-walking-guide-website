@@ -29,16 +29,6 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/galleryPage1": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/galleryPage1.js"
-    ],
-    "/galleryPage4": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/galleryPage4.js"
-    ],
     "/successPage": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

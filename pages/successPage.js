@@ -42,7 +42,8 @@ export default class SuccessPage extends Component {
   
   render() {
     return <div>
-        <h1>You have completed the Art Walk.<br></br>Show this page at the desk to claim your prize.</h1>
+        <h1>Success!</h1>
+        <p>You have completed the Guided Art Walk. Show this page at the desk to claim your prize.</p>
         <div>
             <Link href="/">
                 <a>Home</a>

@@ -32,54 +32,46 @@ export default class HomePageLayout extends Component {
     const galleryPage1Visited = this.state.galleryPage1;
     let galleryPage1Status;
     if(galleryPage1Visited){
-      galleryPage1Status = <p>You have visited GalleryPage1</p>
+      galleryPage1Status = <p class="visited">GalleryPage1: YES</p>
     } else {
-      galleryPage1Status = <p>You have NOT visited GalleryPage1</p>
+      galleryPage1Status = <p class="notvisited">GalleryPage1: NO</p>
     }
 
     const galleryPage2Visited = this.state.galleryPage2;
     let galleryPage2Status;
     if(galleryPage2Visited){
-      galleryPage2Status = <p>You have visited GalleryPage2</p>
+      galleryPage2Status = <p class="visited">GalleryPage2: YES</p>
     } else {
-      galleryPage2Status = <p>You have NOT visited GalleryPage2</p>
+      galleryPage2Status = <p class="notvisited">GalleryPage2: NO</p>
     }
 
     const galleryPage3Visited = this.state.galleryPage3;
     let galleryPage3Status;
     if(galleryPage3Visited){
-      galleryPage3Status = <p>You have visited GalleryPage3</p>
+      galleryPage3Status = <p class="visited">GalleryPage3: YES</p>
     } else {
-      galleryPage3Status = <p>You have NOT visited GalleryPage3</p>
+      galleryPage3Status = <p class="notvisited">GalleryPage3: NO</p>
     }
 
     const galleryPage4Visited = this.state.galleryPage4;
     let galleryPage4Status;
     if(galleryPage4Visited){
-      galleryPage4Status = <p>You have visited GalleryPage4</p>
+      galleryPage4Status = <p class="visited">GalleryPage4: YES</p>
     } else {
-      galleryPage4Status = <p>You have NOT visited GalleryPage4</p>
+      galleryPage4Status = <p class="notvisited">GalleryPage4: NO</p>
     }
 
     const galleryPage5Visited = this.state.galleryPage5;
     let galleryPage5Status;
     if(galleryPage5Visited){
-      galleryPage5Status = <p>You have visited GalleryPage5</p>
+      galleryPage5Status = <p class="visited">GalleryPage5: YES</p>
     } else {
-      galleryPage5Status = <p>You have NOT visited GalleryPage5</p>
-    }
-
-    // HOMEPAGE MESSAGE
-    let homeStatusMessage;
-    if (galleryPage1Visited && galleryPage2Visited && galleryPage3Visited && galleryPage4Visited && galleryPage5Visited){
-      homeStatusMessage = <h1>You have visited all of the pages, collect your prize</h1>
-    } else {
-      homeStatusMessage = <h1>Home Page</h1>
+      galleryPage5Status = <p class="notvisited">GalleryPage5: NO</p>
     }
 
     return <div>
       <Head title="home"/>
-      {homeStatusMessage}
+      <h1>Home Page</h1>
       <div>
         <Link href="/galleryPage1">
             <a>Gallery Page 1</a>

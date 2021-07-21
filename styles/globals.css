@@ -16,11 +16,18 @@ a {
   box-sizing: border-box;
 }
 
-.code {
-  background: #fafafa;
+.notvisited {
+  background: #FF0000;
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+  color: white;
+}
+
+.visited {
+  background: #078a00;
+  border-radius: 5px;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  color: white;
 }
