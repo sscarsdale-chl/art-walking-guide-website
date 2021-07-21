@@ -40,8 +40,8 @@ export default class GalleryPost1 extends Component {
   render(){
 
     return <div>
-      <Head title="Gallery Page 2"/>
-      <h1>Gallery Page 2</h1>
+      <Head title="Gallery Page 1"/>
+      <h1>Gallery Page 1</h1>
         <Link href="/">
             <a>Home</a>
         </Link>
