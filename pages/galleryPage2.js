@@ -41,7 +41,7 @@ export default class GalleryPost2 extends Component {
       <Head title="Gallery Page 2"/>
       <h1>Gallery Page 2</h1>
         <Link href="/">
-            <a>Home</a>
+            <a className="underline pr-4 text-blue-500">Home</a>
         </Link>
     </div>
   }

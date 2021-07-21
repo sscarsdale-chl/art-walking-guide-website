@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Component} from 'react'
 import Link from 'next/link'
+import Gallery from "../components/gallery1";
 
 export default class GalleryPost1 extends Component {
 
@@ -36,16 +37,14 @@ export default class GalleryPost1 extends Component {
     this.togglePage1();
 
   }
-  
+
   render(){
 
-    return <div>
-      <Head title="Gallery Page 1"/>
-      <h1>Gallery Page 1</h1>
-        <Link href="/">
-            <a>Home</a>
-        </Link>
-    </div>
+    return(
+      <Gallery>
+
+      </Gallery>
+    )
   }
 
 }

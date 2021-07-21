@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "RefrigeratorDeluxe";
+  src: url("/fonts/RefrigeratorDeluxe-Heavy.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MyriadPro";
+  src: url("/fonts/MyriadPro-Regular.otf");
+  font-display: swap;
+}
+
+body {
+  background-color: #000;
+}
+
+p {
+  font-family: 'MyriadPro', Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-family: 'RefrigeratorDeluxe', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+h2 {
+  font-family: 'RefrigeratorDeluxe', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+h3 {
+  font-family: 'RefrigeratorDeluxe', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+h4 {
+  font-family: 'RefrigeratorDeluxe', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+h5 {
+  font-family: 'RefrigeratorDeluxe', Arial, sans-serif;
+  font-weight:normal;
+  font-style:normal;
+}
+
+.drink-thumb {
+  width: 65px;
+  height: auto;
+}
+.snap-thumb {
+  width: 65px;
+  height: auto;
+}
