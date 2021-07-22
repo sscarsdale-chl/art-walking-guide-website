@@ -49,10 +49,12 @@ export default function Gallery() {
             playing={true}
             controls={true}
             playsinline={true}
+            autoPlay={true}
             width="100%"
             playIcon={<Image src="/play-icon.svg" height={95} width={101} />}
             light="/VideoFPO.png"
           />
+
 
         </section>
         <section className="container mx-auto px-10 mt-5 mb-32">
