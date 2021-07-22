@@ -1,5 +1,7 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import { useState, useEffect } from 'react';
+import ReactPlayer from 'react-player';
 
 export default function Gallery() {
   const [showModal, setShowModal] = useState(false);
@@ -42,14 +44,15 @@ export default function Gallery() {
 
       <main className="flex flex-col items-center w-full flex-1 px-18 pt-20 text-left">
         <section className="w-full">
-          <a href="#">
-            <span className="sr-only">Video Thumbnail</span>
-            <img
-              className="h-auto w-full"
-              src="/VideoFPO.png"
-              alt="Video Thumbnail"
-            />
-          </a>
+          <ReactPlayer
+            url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+            playing
+            controls="true"
+            width="100%"
+            playIcon={<Image src="/play-icon.svg" height={95} width={101} />}
+            light="/VideoFPO.png"
+          />
+
         </section>
         <section className="container mx-auto px-10 mt-5 mb-32">
           <h3 className="uppercase my-1 text-3xl tracking-wider">Her roots run deep</h3>
