@@ -46,8 +46,9 @@ export default function Gallery() {
         <section className="w-full">
           <ReactPlayer
             url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-            playing
-            controls="true"
+            playing={true}
+            controls={true}
+            playsinline={true}
             width="100%"
             playIcon={<Image src="/play-icon.svg" height={95} width={101} />}
             light="/VideoFPO.png"
