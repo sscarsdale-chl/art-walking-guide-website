@@ -52,7 +52,7 @@ export default function Gallery() {
           </a>
         </section>
         <section className="container mx-auto px-10 mt-5 mb-32">
-          <h3 className="uppercase my-1 text-3xl tracking-wider">Her roots run deep</h3>
+          <h3 className="uppercase my-1 text-3xl tracking-wider">Her roots run deep 4</h3>
           <h5 className="my-1 text-xl tracking-wide">by CONNIE PHILLIPS</h5>
 
           <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-0.5 my-3 block"></div>
