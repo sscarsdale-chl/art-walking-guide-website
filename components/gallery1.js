@@ -2,9 +2,21 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
+import ScrollContainer from 'react-indiana-drag-scroll'
 
 export default function Gallery() {
   const [showModal, setShowModal] = useState(false);
+  const [showModalSnap, setShowModalSnap] = useState(false);
+  const [showModalMap, setShowModalMap] = useState(false);
+  const [showModalGallery, setshowModalGallery] = useState(false);
+  const [galleryNum, setGalleryNum] = useState('');
+
+  const [gallery, setGallery] = useState('');
+
+  function checkGallery(path) {
+    setGallery({path});
+    setshowModalGallery(true)
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -28,7 +40,7 @@ export default function Gallery() {
             </div>
 
             <div className="flex justify-end">
-              <a href="#">
+              <a href="#" onClick={() => setShowModalMap(true)}>
                 <span className="sr-only">Map Thumbnail</span>
                 <img
                   className="h-14 w-auto"
@@ -82,14 +94,12 @@ export default function Gallery() {
               <div className="relative w-full h-full mx-auto">
                 <div className="border-0 relative flex flex-col w-full h-full bg-black outline-none focus:outline-none">
                   <div className="flex justify-between py-3 pl-3 pr-5 ">
-                    <a href="#">
-                      <span className="sr-only">Choctaw</span>
-                      <img
-                        className="h-12 w-auto"
-                        src="/logo.png"
-                        alt="Choctaw"
-                      />
-                    </a>
+                    <span className="sr-only">Choctaw</span>
+                    <img
+                      className="h-12 w-auto"
+                      src="/logo.png"
+                      alt="Choctaw"
+                    />
                     <button
                       className="p-1 ml-auto bg-transparent border-0 text-white float-right text-5xl leading-none font-thin outline-none focus:outline-none"
                       onClick={() => setShowModal(false)}
@@ -101,21 +111,165 @@ export default function Gallery() {
                   </div>
                   <div className="relative py-10 flex flex-col items-center justify-center h-full ">
                     <h2 className="uppercase text-4xl px-4 font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
-                      Fill your glass<br/>by scanning<br/>five artwalk<br/>qr codes
+                      Take a gift<br/>home from us
                     </h2>
                     <img
                       className="h-48 w-auto m-8"
-                      src="/drink_full.png"
+                      src="/gift_large.png"
                       alt="Drink Icon"
                     />
-                    <h4 className="uppercase px-8 text-xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
-                      Once you scan them all report to any bar to redeem your drink!
+                    <h4 className="uppercase px-8 text-xl font-bold text-white text-center">
+                      SCAN THE QR CODES FOR ALL OF THE WORKS OF ART TO RECIEVE A CHOCTAW GIFT!
                     </h4>
                   </div>
                 </div>
               </div>
             </div>
           </>
+        ) : null}
+        {showModalSnap ? (
+          <>
+            <div
+              className="fixed justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            >
+              <div className="relative w-full h-full mx-auto">
+                <div className="border-0 relative flex flex-col w-full h-full bg-black outline-none focus:outline-none">
+                  <div className="flex justify-between py-3 pl-3 pr-5 ">
+                    <span className="sr-only">Choctaw</span>
+                    <img
+                      className="h-12 w-auto"
+                      src="/logo.png"
+                      alt="Choctaw"
+                    />
+                    <button
+                      className="p-1 ml-auto bg-transparent border-0 text-white float-right text-5xl leading-none font-thin outline-none focus:outline-none"
+                      onClick={() => setShowModalSnap(false)}
+                    >
+                      <span className="bg-transparent text-white h-9 w-9 text-5xl leading-7 block outline-none focus:outline-none">
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                  <div className="relative py-10 flex flex-col items-center justify-center h-full ">
+                    <h2 className="uppercase text-4xl px-4 font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
+                      You are a work<br/>of art! Literally.
+                    </h2>
+                    <img
+                      className="h-60 w-auto m-8"
+                      src="/snap_chat_full.png"
+                      alt="Drink Icon"
+                    />
+                    <a href="#">
+                      <div>
+                        <img
+                          className="h-20 w-auto m-1 mx-auto"
+                          src="/snap_icon.png"
+                          alt="Drink Icon"
+                        />
+                        <h4 className="uppercase text-xl font-bold text-white text-center">
+                          Click to open Snap Chat lens
+                        </h4>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : null}
+        {showModalMap ? (
+          <>
+            <div
+              className="fixed justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+            >
+              <div className="relative w-full h-full mx-auto">
+                <div className="border-0 relative flex flex-col w-full h-full bg-black outline-none focus:outline-none">
+                  <div className="flex justify-between py-3 pl-3 pr-5 ">
+                    <span className="sr-only">Choctaw</span>
+                    <img
+                      className="h-12 w-auto"
+                      src="/logo.png"
+                      alt="Choctaw"
+                    />
+                    <h3 className="text-center w-full flex m-auto flex-col text-2xl">CLICK FOR PREVIEW</h3>
+                    <button
+                      className="p-1 ml-auto bg-transparent border-0 text-white float-right text-5xl leading-none font-thin outline-none focus:outline-none"
+                      onClick={() => setShowModalMap(false)}
+                    >
+                      <span className="bg-transparent text-white h-9 w-9 text-5xl leading-7 block outline-none focus:outline-none">
+                        ×
+                      </span>
+                    </button>
+                  </div>
+                  <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
+
+                  <div className="w-full overflow-auto">
+                    <ScrollContainer
+                      className="container"
+                      style={{width: "100%", height: "calc(100vh - 79.81px)"}}
+                      horizontal={true}
+                      vertical={true}
+                      alt="Map Thumbnail"
+                      nativeMobileScroll={false}
+                    >
+                      <div className="relative">
+                        <div
+                          id="box1"
+                          className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
+                          onClick={() => checkGallery("/gallery_image1.png")}
+                        />
+                        <div
+                          id="box2"
+                          className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
+                          onClick={() => checkGallery("/VideoFPO.png")}
+                        />
+                        <img className="max-w-none " style={{width: 708, height: 1265}} src="/MapwithDots.png" />
+                      </div>
+                    </ScrollContainer>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </>
+        ) : null}
+        {showModalGallery ? (
+          <div
+            className="fixed justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
+          >
+            <div className="relative w-full h-full mx-auto">
+              <div className="border-0 relative flex flex-col w-full h-full bg-black bg-opacity-80 outline-none focus:outline-none">
+                <div className="flex justify-between py-3 pl-3 pr-5 bg-black">
+                  <span className="sr-only">Choctaw</span>
+                  <img
+                    className="h-12 w-auto"
+                    src="/logo.png"
+                    alt="Choctaw"
+                  />
+                  <button
+                    className="p-1 ml-auto bg-transparent border-0 text-white float-right text-5xl leading-none font-thin outline-none focus:outline-none"
+                    onClick={() => setshowModalGallery(false)}
+                  >
+                    <span className="bg-transparent text-white h-9 w-9 text-5xl leading-7 block outline-none focus:outline-none">
+                      ×
+                    </span>
+                  </button>
+                </div>
+                <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
+                <div className="border-0 relative flex flex-col w-full h-full bg-transparent outline-none focus:outline-none">
+                  <div className="relative py-10 flex flex-col items-center justify-center h-full ">
+                    <div className="flex flex-col">
+                      <img
+                        className="w-auto m-auto flex flex-row"
+                        src={gallery.path}
+                        alt="Choctaw"
+                        onClick={() => setshowModalGallery(false)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         ) : null}
       </main>
 
@@ -143,7 +297,7 @@ export default function Gallery() {
             </div>
             <div className="flex-grow w-9/12 h-28 bg-emerald-300 text-white text-2xl font-extrabold flex items-center justify-center">
               <div className="h-full flex items-center justify-center">
-                <a href="#">
+                <a href="#" onClick={() => setShowModalSnap(true)}>
                   <span className="sr-only">Snap Thumbnail</span>
                   <img
                     className="snap-thumb"
