@@ -54,3 +54,18 @@ h5 {
   width: 65px;
   height: auto;
 }
+
+.map-container {
+  margin-top: 80px;
+  height: calc(100vh - 79.81px);
+}
+
+.react-transform-wrapper {
+  height: calc(100vh - 79.81px) !important;
+}
+
+.tools {
+  position: absolute;
+  z-index: 10;
+  bottom: 10px
+}

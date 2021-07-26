@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import ScrollContainer from 'react-indiana-drag-scroll'
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function Gallery() {
   const [showModal, setShowModal] = useState(false);
   const [showModalSnap, setShowModalSnap] = useState(false);
   const [showModalMap, setShowModalMap] = useState(false);
   const [showModalGallery, setshowModalGallery] = useState(false);
-  const [galleryNum, setGalleryNum] = useState('');
 
   const [gallery, setGallery] = useState('');
 
@@ -204,28 +204,37 @@ export default function Gallery() {
                   <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
 
                   <div className="w-full overflow-auto">
-                    <ScrollContainer
-                      className="container"
-                      style={{width: "100%", height: "calc(100vh - 79.81px)"}}
-                      horizontal={true}
-                      vertical={true}
-                      alt="Map Thumbnail"
-                      nativeMobileScroll={false}
+                    <TransformWrapper
+                      initialScale={3}
+                      initialPositionX={0}
+                      initialPositionY={0}
+                      maxScale={12}
                     >
-                      <div className="relative">
-                        <div
-                          id="box1"
-                          className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
-                          onClick={() => checkGallery("/gallery_image1.png")}
-                        />
-                        <div
-                          id="box2"
-                          className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
-                          onClick={() => checkGallery("/VideoFPO.png")}
-                        />
-                        <img className="max-w-none " style={{width: 708, height: 1265}} src="/MapwithDots.png" />
-                      </div>
-                    </ScrollContainer>
+                      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                        <React.Fragment>
+                          <div className="tools">
+                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
+                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
+                          </div>
+                          <TransformComponent>
+                            <img src="/Artwalk_Map.png" alt="Artwalk Map" />
+                            <div className="absolute">
+                              <div
+                                id="box1"
+                                className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-1 w-1 block absolute"
+                                onClick={() => checkGallery("/gallery_image1.png")}
+                              />
+                              <div
+                                id="box2"
+                                className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
+                                onClick={() => checkGallery("/VideoFPO.png")}
+                              />
+                            </div>
+                          </TransformComponent>
+                        </React.Fragment>
+                      )}
+                    </TransformWrapper>
+
                   </div>
                 </div>
               </div>

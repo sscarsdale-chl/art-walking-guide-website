@@ -41,7 +41,7 @@ export default class App extends Component {
       })
     }
   }
-  
+
   render(){
 
     // VISITED PAGE STATES
