@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { Component} from 'react'
 import Link from 'next/link'
 import Gallery from "../components/gallery1";
+import Intro from "../components/intro";
 
 export default class GalleryPost1 extends Component {
 
@@ -11,7 +12,8 @@ export default class GalleryPost1 extends Component {
     galleryPage3: false,
     galleryPage4: false,
     galleryPage5: false,
-    pageCount: "0/5"
+    pageCount: "0/5",
+    introVisited: false
   }
 
   // Update LocalStorage
@@ -24,7 +26,7 @@ export default class GalleryPost1 extends Component {
     const data = localStorage.getItem('_pagetracking')
 
     // Check for data in LocalStorage and set state if it exists
-    if(data) {  
+    if(data) {
       this.setState(prevState => {
         return JSON.parse(data)
       })
@@ -53,7 +55,7 @@ export default class GalleryPost1 extends Component {
           counter += 1;
         }
       }
-    
+
       return {
         pageCount: counter + "/" + pageStatusArray.length
       }
@@ -62,9 +64,15 @@ export default class GalleryPost1 extends Component {
   }
 
   render(){
-    return(
-      <Gallery pagecount={this.state.pageCount} />
-    )
+    if (!this.state.introVisited) {
+      return(
+        <Intro></Intro>
+      )
+    }else{
+      return(
+        <Gallery pagecount={this.state.pageCount} />
+      )
+    }
   }
 
 }

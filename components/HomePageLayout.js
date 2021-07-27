@@ -9,7 +9,9 @@ export default class HomePageLayout extends Component {
     galleryPage2: false,
     galleryPage3: false,
     galleryPage4: false,
-    galleryPage5: false
+    galleryPage5: false,
+    pageCount: "0/5",
+    introVisited: false
   }
 
   // Local Storage
@@ -25,7 +27,7 @@ export default class HomePageLayout extends Component {
       })
     }
   }
-  
+
   render() {
 
     // VISITED PAGE STATES
@@ -69,6 +71,14 @@ export default class HomePageLayout extends Component {
       galleryPage5Status = <p className="font-sans text-red-500">GalleryPage5: NO</p>
     }
 
+    const introVisited = this.state.introVisited;
+    let introVisitedStatus;
+    if(introVisited){
+      introVisitedStatus = <p className="font-sans text-green-500">introVisited: YES</p>
+    } else {
+      introVisitedStatus = <p className="font-sans text-red-500">introVisited: NO</p>
+    }
+
     return <div>
       <Head title="home"/>
       <h1>Home Page</h1>
@@ -97,8 +107,9 @@ export default class HomePageLayout extends Component {
         <li>{galleryPage3Status}</li>
         <li>{galleryPage4Status}</li>
         <li>{galleryPage5Status}</li>
+        <li>{introVisitedStatus}</li>
       </ul>
-  
+
     </div>
   }
 

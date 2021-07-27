@@ -9,7 +9,9 @@ export default class SuccessPage extends Component {
     galleryPage2: false,
     galleryPage3: false,
     galleryPage4: false,
-    galleryPage5: false
+    galleryPage5: false,
+    pageCount: "0/5",
+    introVisited: false
   }
 
   // Button Handlers
@@ -20,7 +22,9 @@ export default class SuccessPage extends Component {
         galleryPage2: false,
         galleryPage3: false,
         galleryPage4: false,
-        galleryPage5: false
+        galleryPage5: false,
+        pageCount: "0/5",
+        introVisited: false
       }
     })
   }
@@ -39,7 +43,7 @@ export default class SuccessPage extends Component {
     }
     this.resetStateVars();
   }
-  
+
   render() {
     return <div>
       <div
@@ -88,7 +92,7 @@ export default class SuccessPage extends Component {
           </div>
         </div>
       </div>
-      
+
     </div>
   }
 
