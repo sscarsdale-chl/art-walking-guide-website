@@ -11,7 +11,8 @@ export default class App extends Component {
     galleryPage2: false,
     galleryPage3: false,
     galleryPage4: false,
-    galleryPage5: false
+    galleryPage5: false,
+    pagecount: "0/5"
   }
 
   // Button Handlers
@@ -23,7 +24,8 @@ export default class App extends Component {
         galleryPage2: false,
         galleryPage3: false,
         galleryPage4: false,
-        galleryPage5: false
+        galleryPage5: false,
+        pagecount: "0/5"
       }
     })
   }
@@ -44,6 +46,7 @@ export default class App extends Component {
 
   render(){
 
+    // TODO: Refactor this into a CompletionCheck function 
     // VISITED PAGE STATES
     const galleryPage1Visited = this.state.galleryPage1;
     const galleryPage2Visited = this.state.galleryPage2;

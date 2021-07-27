@@ -10,40 +10,61 @@ export default class GalleryPost3 extends Component {
     galleryPage2: false,
     galleryPage3: false,
     galleryPage4: false,
-    galleryPage5: false
+    galleryPage5: false,
+    pageCount: "0/5"
   }
 
-  // Button Handlers
-  togglePage3 = () => {
+  // Update LocalStorage
+  componentDidUpdate() {
+    localStorage.setItem('_pagetracking', JSON.stringify(this.state))
+  }
+
+  // Load State from LocalStorage and update as necessary
+  componentDidMount(){
+    const data = localStorage.getItem('_pagetracking')
+
+    // Check for data in LocalStorage and set state if it exists
+    if(data) {  
+      this.setState(prevState => {
+        return JSON.parse(data)
+      })
+    }
+
+    // Flag this page as viewed
     this.setState(prevState => {
       return {
         galleryPage3: true
       }
     })
-  }
 
-  // Local Storage
-  componentDidUpdate() {
-    localStorage.setItem('_pagetracking', JSON.stringify(this.state))
-  }
+    // Figure out how many pages have been viewed and set the PageCount string
+    this.setState(prevState => {
 
-  componentDidMount(){
-    const data = localStorage.getItem('_pagetracking')
-    if(data) {
-      this.setState(prevState => {
-        return JSON.parse(data)
-      })
-    }
-    this.togglePage3();
+      var pageStatusArray = [ prevState.galleryPage1,
+                                prevState.galleryPage2,
+                                prevState.galleryPage3,
+                                prevState.galleryPage4,
+                                prevState.galleryPage5 ];
+
+      let counter = 0;
+
+      for(var i=0; i<pageStatusArray.length; i++) {
+        if(pageStatusArray[i]) {
+          counter += 1;
+        }
+      }
+    
+      return {
+        pageCount: counter + "/" + pageStatusArray.length
+      }
+    })
 
   }
 
   render(){
 
     return(
-      <Gallery>
-
-      </Gallery>
+      <Gallery pagecount={this.state.pageCount} />    
     )
   }
 

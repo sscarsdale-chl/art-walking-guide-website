@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useState, useEffect } from 'react';
 
-export default function Gallery() {
+export default function Gallery(props) {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -129,7 +129,7 @@ export default function Gallery() {
                 </a>
               </div>
               <h4 className="uppercase ml-5 mr-2.5 text-5xl font-bold text-transparent text-center bg-clip-text bg-gradient-to-r from-base_pink via-base_purple to-base_teal">
-                1/5
+                {props.pagecount}
               </h4>
             </div>
             <div className="flex-grow-0 mx-auto mt-2 h-full rounded-md bg-emerald-500 text-white text-2xl font-extrabold flex items-center justify-center">
