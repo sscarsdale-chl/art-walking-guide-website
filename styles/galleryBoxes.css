@@ -1,8 +1,65 @@
-#box1 {
-  top: 185px;
-  left: 33px;
+#phillips {
+  top: 36.1%;
+  left: 16%;
+  width: 4%;
+  height: 1.5%;
 }
-#box2 {
-  top: 495px;
-  left: 385px;
+#folsom {
+  top: 42.1%;
+  left: 11.4%;
+  width: 4%;
+  height: 1.5%;
+}
+#nevaquaya {
+  top: 28.1%;
+  left: 17.5%;
+  width: 5%;
+  height: 2.5%;
+}
+#newbyCoker {
+  top: 17.7%;
+  left: 15.5%;
+  width: 5.5%;
+  height: 1.7%;
+}
+#bailey {
+  top: 17.4%;
+  left: 24.5%;
+  width: 3.5%;
+  height: 1.7%;
+}
+#kaufman {
+  top: 25.2%;
+  left: 27%;
+  width: 5.5%;
+  height: 1.7%;
+}
+#hill {
+  top: 25.2%;
+  left: 37.8%;
+  width: 3.5%;
+  height: 1.7%;
+}
+#cavin {
+  top: 92%;
+  left: 73.4%;
+  width: 3.5%;
+  height: 1.5%;
+}
+
+.box-name {
+  font-size: 0.12rem;
+  margin-right: 1px;
+  -webkit-backface-visibility: hidden;
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+  -webkit-filter: blur(0px);
+}
+
+.map {
+  margin: auto;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }

@@ -30,7 +30,7 @@ export default function Intro() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section>
-        <video ref={vidRef} className='videoTag' poster='VideoFPO.png' autoPlay muted onEnded={videoEnded}>
+        <video ref={vidRef} className='videoTag' poster='intro_poster.png' autoPlay muted playsInline onEnded={videoEnded}>
           <source src='/Berries.mp4' type='video/mp4' />
         </video>
       </section>

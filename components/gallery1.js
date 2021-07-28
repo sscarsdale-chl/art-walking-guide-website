@@ -203,34 +203,37 @@ export default function Gallery(props) {
                   </div>
                   <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
 
-                  <div className="w-full overflow-auto">
+                  <div className="w-full overflow-auto map-wrapper">
                     <TransformWrapper
                       initialScale={3}
-                      initialPositionX={0}
-                      initialPositionY={0}
+                      minScale={1}
                       maxScale={12}
+                      defaultPositionX={-1500}
+                      defaultPositionY={-300}
+                      scale={12}
+                      options={{
+                        limitToWrapper: true
+                      }}
                     >
-                      {({ zoomIn, zoomOut, resetTransform, ...rest }) => (
+                      {({ zoomIn, zoomOut }) => (
                         <React.Fragment>
                           <div className="tools">
                             <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
                             <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
                           </div>
-                          <TransformComponent>
-                            <img src="/Artwalk_Map.png" alt="Artwalk Map" />
-                            <div className="absolute">
-                              <div
-                                id="box1"
-                                className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-1 w-1 block absolute"
-                                onClick={() => checkGallery("/gallery_image1.png")}
-                              />
-                              <div
-                                id="box2"
-                                className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-5 w-5 block absolute"
-                                onClick={() => checkGallery("/VideoFPO.png")}
-                              />
-                            </div>
-                          </TransformComponent>
+                          <div className="map-container">
+                            <TransformComponent>
+                              <img src="/Artwalk_Map.png" alt="Artwalk Map" className="map"/>
+                              <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="newbyCoker" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="bailey" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                              <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            </TransformComponent>
+                          </div>
                         </React.Fragment>
                       )}
                     </TransformWrapper>

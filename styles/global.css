@@ -56,12 +56,30 @@ h5 {
 }
 
 .map-container {
-  margin-top: 80px;
+  height: calc(100vh - 79.81px);
+}
+
+.map-wrapper {
   height: calc(100vh - 79.81px);
 }
 
 .react-transform-wrapper {
-  height: calc(100vh - 79.81px) !important;
+  /* height: calc(100vh - 79.81px) !important; */
+  height: 100% !important;
+  width: 100% !important;
+  -webkit-filter: blur(0px);
+}
+
+.react-transform-component {
+  transform: translate3d(0px, 0px, 0px) scale(8);
+}
+
+.react-transform-wrapper img{
+  -webkit-backface-visibility: hidden;
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+  -webkit-filter: blur(0px);
 }
 
 .tools {
