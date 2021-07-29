@@ -8,11 +8,8 @@ import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 const IMG_URL = "/Artwalk_Map.png";
 
 const containerStyle = {
-  justifyContent: "center",
-  alignItems: "center",
   width: "100vw",
-  height: "calc(100vh - 79.81px)",
-  display: "flex"
+  height: "calc(100vh - 79.81px)"
 };
 
 export default function Gallery(props) {
@@ -214,16 +211,24 @@ export default function Gallery(props) {
                     </button>
                   </div>
                   <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
-                  <TransformWrapper>
-                    {({ zoomIn, zoomOut }) => (
-                      <React.Fragment>
-                        <div className="tools">
-                          <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
-                          <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
-                        </div>
-                        <TransformComponent>
-                          <div style={containerStyle}>
-                            <img style={{ width: "100%" }} ref={imgRef} src={IMG_URL} />
+
+                  <div className="w-full overflow-auto map-wrapper">
+                    <TransformWrapper
+                      initialScale={.2}
+                      minScale={.2}
+                      maxScale={.7}
+                      defaultPositionX={-1500}
+                      defaultPositionY={-300}
+                    >
+
+                      {({ zoomIn, zoomOut }) => (
+                        <React.Fragment>
+                          <div className="tools">
+                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
+                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
+                          </div>
+                          <TransformComponent>
+                            <img ref={imgRef} src={IMG_URL} />
                             <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                             <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                             <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
@@ -232,12 +237,12 @@ export default function Gallery(props) {
                             <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                             <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                             <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                          </div>
-                        </TransformComponent>
-                      </React.Fragment>
-                    )}
-                  </TransformWrapper>
-                  
+                          </TransformComponent>
+                        </React.Fragment>
+                      )}
+                    </TransformWrapper>
+
+                  </div>
                 </div>
               </div>
             </div>

@@ -71,7 +71,7 @@ h5 {
 }
 
 .react-transform-component {
-  transform: translate3d(0px, 0px, 0px) scale(8);
+  transform: translate3d(-677.41px, -761.3px, 0px) scale(12);
 }
 
 .react-transform-wrapper img{
@@ -80,6 +80,9 @@ h5 {
   -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
   transform: translateZ(0);
   -webkit-filter: blur(0px);
+  width: 9000px;
+  height: auto !important;
+  max-width: 9000px;
 }
 
 .tools {
