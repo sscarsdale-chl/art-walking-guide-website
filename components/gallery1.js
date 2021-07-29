@@ -1,9 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ReactPlayer from 'react-player';
 import ScrollContainer from 'react-indiana-drag-scroll'
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
+
+const IMG_URL = "/Artwalk_Map.png";
+
+const containerStyle = {
+  justifyContent: "center",
+  alignItems: "center",
+  width: "100vw",
+  height: "calc(100vh - 79.81px)",
+  display: "flex"
+};
 
 export default function Gallery(props) {
   const [showModal, setShowModal] = useState(false);
@@ -17,6 +27,8 @@ export default function Gallery(props) {
     setGallery({path});
     setshowModalGallery(true)
   }
+
+  const imgRef = useRef();
 
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
@@ -204,26 +216,16 @@ export default function Gallery(props) {
                   <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
 
                   <div className="w-full overflow-auto map-wrapper">
-                    <TransformWrapper
-                      initialScale={3}
-                      minScale={1}
-                      maxScale={12}
-                      defaultPositionX={-1500}
-                      defaultPositionY={-300}
-                      scale={12}
-                      options={{
-                        limitToWrapper: true
-                      }}
-                    >
+                    <TransformWrapper>
                       {({ zoomIn, zoomOut }) => (
                         <React.Fragment>
                           <div className="tools">
                             <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
                             <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
                           </div>
-                          <div className="map-container">
-                            <TransformComponent>
-                              <img src="/Artwalk_Map.png" alt="Artwalk Map" className="map"/>
+                          <TransformComponent>
+                            <div style={containerStyle}>
+                              <img style={{ width: "100%" }} ref={imgRef} src={IMG_URL} />
                               <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                               <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                               <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
@@ -232,8 +234,8 @@ export default function Gallery(props) {
                               <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                               <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                               <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            </TransformComponent>
-                          </div>
+                            </div>
+                          </TransformComponent>
                         </React.Fragment>
                       )}
                     </TransformWrapper>
