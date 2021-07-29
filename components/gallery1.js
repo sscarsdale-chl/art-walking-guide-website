@@ -214,33 +214,30 @@ export default function Gallery(props) {
                     </button>
                   </div>
                   <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
-
-                  <div className="w-full overflow-auto map-wrapper">
-                    <TransformWrapper>
-                      {({ zoomIn, zoomOut }) => (
-                        <React.Fragment>
-                          <div className="tools">
-                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
-                            <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
+                  <TransformWrapper>
+                    {({ zoomIn, zoomOut }) => (
+                      <React.Fragment>
+                        <div className="tools">
+                          <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomIn()}>+</button>
+                          <button className="bg-opacity-60 bg-white m-2 h-10 w-10 text-black" onClick={() => zoomOut()}>-</button>
+                        </div>
+                        <TransformComponent>
+                          <div style={containerStyle}>
+                            <img style={{ width: "100%" }} ref={imgRef} src={IMG_URL} />
+                            <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="newbyCoker" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="bailey" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
                           </div>
-                          <TransformComponent>
-                            <div style={containerStyle}>
-                              <img style={{ width: "100%" }} ref={imgRef} src={IMG_URL} />
-                              <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="newbyCoker" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="bailey" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                              <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            </div>
-                          </TransformComponent>
-                        </React.Fragment>
-                      )}
-                    </TransformWrapper>
-
-                  </div>
+                        </TransformComponent>
+                      </React.Fragment>
+                    )}
+                  </TransformWrapper>
+                  
                 </div>
               </div>
             </div>
