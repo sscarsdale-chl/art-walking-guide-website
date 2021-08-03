@@ -31,7 +31,7 @@ export default function Intro() {
       </Head>
       <section>
         <video ref={vidRef} className='videoTag' poster='intro_poster.png' autoPlay muted playsInline onEnded={videoEnded}>
-          <source src='/Berries.mp4' type='video/mp4' />
+          <source src='/Choctaw_DigitalArtWalk.mp4' type='video/mp4' />
         </video>
       </section>
     </div>

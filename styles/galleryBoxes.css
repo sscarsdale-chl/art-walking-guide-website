@@ -46,6 +46,42 @@
   width: 3.5%;
   height: 1.5%;
 }
+#judd_medallion {
+  top: 31.1%;
+  left: 13%;
+  width: 7%;
+  height: 1.5%;
+}
+#judd_pushmataha {
+  top: 88%;
+  left: 70%;
+  width: 7.5%;
+  height: 1.5%;
+}
+#marshall {
+  top: 27.1%;
+  left: 20.5%;
+  width: 4%;
+  height: 2%;
+}
+#umsted {
+  top: 54.7%;
+  left: 26.4%;
+  width: 9%;
+  height: 1.5%;
+}
+#umsted_2 {
+  top: 25.4%;
+  left: 57%;
+  width: 9%;
+  height: 2.5%;
+}
+#smalling {
+  top: 80.5%;
+  left: 59%;
+  width: 4.3%;
+  height: 2.5%;
+}
 
 .box-name {
   font-size: 0.12rem;

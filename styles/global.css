@@ -90,3 +90,14 @@ h5 {
   z-index: 10;
   bottom: 10px
 }
+
+.video-wrapper {
+  position: relative;
+  padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player__preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -12,6 +12,21 @@ export default class App extends Component {
     galleryPage3: false,
     galleryPage4: false,
     galleryPage5: false,
+    dylanCavinBigSky: false,
+    stevenPaulJuddMedallion: false,
+    stevenPaulJuddPushmataha: false,
+    dianaFolsomOkhina: false,
+    timNevaquayaTheMatriarchs: false,
+    conniePhillipsDuskDawn: false,
+    laurettaCokerJustLikeWeRemembered: false,
+    geraldHill: false,
+    geraldHillFortScott: false,
+    waniMarshallIshki: false,
+    joannaKaufmanMothStory: false,
+    janeUmstedGorget: false,
+    janeUmstedMap: false,
+    dgSmallingSports: false,
+    lindaBaileyWonder: false,
     pagecount: "0/5",
     introVisited: false
   }
@@ -26,6 +41,21 @@ export default class App extends Component {
         galleryPage3: false,
         galleryPage4: false,
         galleryPage5: false,
+        dylanCavinBigSky: false,
+        stevenPaulJuddMedallion: false,
+        stevenPaulJuddPushmataha: false,
+        dianaFolsomOkhina: false,
+        timNevaquayaTheMatriarchs: false,
+        conniePhillipsDuskDawn: false,
+        laurettaCokerJustLikeWeRemembered: false,
+        geraldHill: false,
+        geraldHillFortScott: false,
+        waniMarshallIshki: false,
+        joannaKaufmanMothStory: false,
+        janeUmstedGorget: false,
+        janeUmstedMap: false,
+        dgSmallingSports: false,
+        lindaBaileyWonder: false,
         pagecount: "0/5",
         introVisited: false
       }
@@ -55,10 +85,25 @@ export default class App extends Component {
     const galleryPage3Visited = this.state.galleryPage3;
     const galleryPage4Visited = this.state.galleryPage4;
     const galleryPage5Visited = this.state.galleryPage5;
+    const dylanCavinBigSkyVisited = this.state.dylanCavinBigSky;
+    const stevenPaulJuddMedallionVisited = this.state.stevenPaulJuddMedallion;
+    const stevenPaulJuddPushmatahaVisited = this.state.stevenPaulJuddPushmataha;
+    const dianaFolsomOkhinaVisited = this.state.dianaFolsomOkhina;
+    const timNevaquayaTheMatriarchsVisited = this.state.timNevaquayaTheMatriarchs;
+    const conniePhillipsDuskDawnVisited = this.state.conniePhillipsDuskDawn;
+    const laurettaCokerJustLikeWeRememberedVisited = this.state.laurettaCokerJustLikeWeRemembered;
+    const geraldHillVisited = this.state.geraldHill;
+    const geraldHillFortScottVisited = this.state.geraldHillFortScott;
+    const waniMarshallIshkiVisited = this.state.waniMarshallIshki;
+    const joannaKaufmanMothStoryVisited = this.state.joannaKaufmanMothStory;
+    const janeUmstedGorgetVisited = this.state.janeUmstedGorget;
+    const janeUmstedMapVisited = this.state.janeUmstedMap;
+    const dgSmallingSportsVisited = this.state.dgSmallingSports;
+    const lindaBaileyWonderVisited = this.state.lindaBaileyWonder;
 
     // HOMEPAGE MESSAGE
     let homeStatusMessage;
-    if (galleryPage1Visited && galleryPage2Visited && galleryPage3Visited && galleryPage4Visited && galleryPage5Visited){
+    if (dylanCavinBigSkyVisited && stevenPaulJuddMedallionVisited && stevenPaulJuddPushmatahaVisited && dianaFolsomOkhinaVisited && timNevaquayaTheMatriarchsVisited && conniePhillipsDuskDawnVisited && laurettaCokerJustLikeWeRememberedVisited){
       //homeStatusMessage = <SuccessPageLayout/>
       Router.push('/successPage')
     } else {

@@ -19,10 +19,16 @@ export default function Gallery(props) {
   const [showModalGallery, setshowModalGallery] = useState(false);
 
   const [gallery, setGallery] = useState('');
+  const [alt, setAlt] = useState('');
 
-  function checkGallery(path) {
+  function checkGallery(path,altText) {
     setGallery({path});
+    setAlt({altText});
     setshowModalGallery(true)
+  }
+
+  function checkTest() {
+    console.log("testing");
   }
 
   const imgRef = useRef();
@@ -65,16 +71,20 @@ export default function Gallery(props) {
 
       <main className="flex flex-col items-center w-full flex-1 px-18 pt-20 text-left">
         <section className="w-full">
-          <ReactPlayer
-            url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-            playing={true}
-            controls={true}
-            playsinline={true}
-            autoPlay={true}
-            width="100%"
-            playIcon={<Image src="/play-icon.svg" height={95} width={101} />}
-            light="/VideoFPO.png"
-          />
+          <div className="video-wrapper">
+            <ReactPlayer
+              url="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+              playing={true}
+              controls={true}
+              playsinline={true}
+              autoPlay={true}
+              width="100%"
+              height="100%"
+              style={{position: 'absolute', top: 0}}
+              playIcon={<img src="/play-icon.svg" height={95} width={101} />}
+              light="/VideoFPO.png"
+            />
+          </div>
 
 
         </section>
@@ -229,14 +239,20 @@ export default function Gallery(props) {
                           </div>
                           <TransformComponent>
                             <img ref={imgRef} src={IMG_URL} />
-                            <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="newbyCoker" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="bailey" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
-                            <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/gallery_image1.png")} ></div>
+                            <div id="phillips" className="absolute inline-flex" onClick={() => checkGallery("/Connie_Phillips_Series.jpg","Two landscape paintings in greens and blues")} ></div>
+                            <div id="folsom" className="absolute inline-flex" onClick={() => checkGallery("/Diana_Folsom_Okhina.jpg","Bright-blue painting and bright-yellow painting with green detail")} ></div>
+                            <div id="marshall" className="absolute inline-flex" onClick={() => checkGallery("/Wani_Marshall_Full_Series.jpg","Series of four colorful art pieces featuring women")} ></div>
+                            <div id="nevaquaya" className="absolute inline-flex" onClick={() => checkGallery("/Tim_Nevaquaya_The_Matriarchs.jpg","Four colorful tribal members (Choctaw, Chickasaw, Comanche)")} ></div>
+                            <div id="newbyCoker" className="absolute inline-flex" onClick={() => checkGallery("/Lauretta_Coker_Full_Mosaic.jpg","Set of three glass mosaics")} ></div>
+                            <div id="bailey" className="absolute inline-flex" onClick={() => checkGallery("/Linda_Bailey_When_I_In_Awesome_Wonder.jpg","Sunset painting")} ></div>
+                            <div id="kaufman" className="absolute inline-flex" onClick={() => checkGallery("/Moth_Story.jpg","Series of 4 paintings")} ></div>
+                            <div id="hill" className="absolute inline-flex" onClick={() => checkGallery("/Chapel_Ceiling_Choctaw_Hospital.jpg","Photograph of Choctaw Hospital chapel ceiling")} ></div>
+                            <div id="cavin" className="absolute inline-flex" onClick={() => checkGallery("/Dylan_Cavin_Big_Sky.jpg","Painting of Choctaw girl wrapped in blanket")} ></div>
+                            <div id="judd_medallion" className="absolute inline-flex" onClick={() => checkGallery("/Steven_Paul_Judd_Medallion.jpg","Dice mosaic of medallion")} ></div>
+                            <div id="judd_pushmataha" className="absolute inline-flex" onClick={() => checkGallery("/Steven_Paul_Judd_Pushmataha.jpg","Dice mosaic of Pushmataha")} ></div>
+                            <div id="umsted" className="absolute inline-flex" onClick={() => checkGallery("/Jane_Umsted_Gorget_of_the_Sun_King.jpg","Painting of medallion")} ></div>
+                            <div id="umsted_2" className="absolute inline-flex" onClick={() => checkGallery("/Jane_Umstead_Map_of_the_Sun_King.jpg","Yellow-and-blue geometric painting")} ></div>
+                            <div id="smalling" className="absolute inline-flex" onClick={() => checkGallery("/DG_Smalling_art_series.jpg","Series of four paintings on birch panels")} ></div>
                           </TransformComponent>
                         </React.Fragment>
                       )}
@@ -272,12 +288,12 @@ export default function Gallery(props) {
                 </div>
                 <div className="from-base_pink via-base_purple to-base_teal bg-gradient-to-r w-full h-2 block"></div>
                 <div className="border-0 relative flex flex-col w-full h-full bg-transparent outline-none focus:outline-none">
-                  <div className="relative py-10 flex flex-col items-center justify-center h-full ">
+                  <div className="relative py-10 px-4 flex flex-col items-center justify-center h-full ">
                     <div className="flex flex-col">
                       <img
                         className="w-auto m-auto flex flex-row"
                         src={gallery.path}
-                        alt="Choctaw"
+                        alt={alt.altText}
                         onClick={() => setshowModalGallery(false)}
                       />
                     </div>
